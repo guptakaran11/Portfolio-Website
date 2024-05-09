@@ -28,19 +28,32 @@ class HomePage extends StatelessWidget {
             height: size.height,
             fit: BoxFit.cover,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Column(
             children: [
-              DeviceFrame(
-                device: Devices.ios.iPhone13,
-                screen: const Center(
-                  child: Text(
-                    'Hello World',
-                    style: TextStyle(
-                      color: Colors.white,
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: size.height - 100,
+                    child: DeviceFrame(
+                      device: Devices.ios.iPhone13,
+                      screen: Container(
+                        color: Colors.red,
+                        child: const Center(
+                          child: Text(
+                            'Hello World',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ],
           ),
