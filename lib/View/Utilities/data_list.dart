@@ -49,7 +49,7 @@ List<ColorModel> colorPalette = [
     color: Colors.blue,
   ),
   ColorModel(
-    svgPath: "assets/images/CloudyBlue.svg",
+    svgPath: "assets/images/cloudydarkBlue.svg",
     gradient: const LinearGradient(
       colors: [
         Color(0xff00ebd5),
@@ -76,7 +76,7 @@ List<ColorModel> colorPalette = [
   ColorModel(
     svgPath: "assets/images/CloudyBlue.svg",
     gradient: const LinearGradient(
-      [
+      colors: [
         Color(0xffc95edb),
         Colors.black12,
       ],
@@ -87,9 +87,9 @@ List<ColorModel> colorPalette = [
     color: Colors.purple,
   ),
   ColorModel(
-    svgPath: "assets/images/CloudyBlue.svg",
+    svgPath: "assets/images/cloudydarkBlue.svg",
     gradient: const LinearGradient(
-      [
+      colors: [
         Colors.indigo,
         Colors.deepOrange,
       ],

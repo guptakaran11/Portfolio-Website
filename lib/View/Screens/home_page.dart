@@ -25,21 +25,24 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                colors: [
-                  Colors.blue,
-                  Colors.black45,
-                ],
-              ),
-            ),
+          Selector<CurrentStateProvider, int>(
+            selector: (context, provider) => provider.knobSelected,
+            builder: (context, _, __) {
+              return Container(
+                decoration: BoxDecoration(
+                    gradient: colorPalette[currentState.knobSelected].gradient),
+              );
+            },
           ),
-          SvgPicture.asset(
-            "assets/images/CloudyBlue.svg",
-            height: size.height,
-            fit: BoxFit.cover,
+          Selector<CurrentStateProvider, int>(
+            selector: (context, provider) => provider.knobSelected,
+            builder: (context, _, __) {
+              return SvgPicture.asset(
+                colorPalette[currentState.knobSelected].svgPath,
+                height: size.height,
+                fit: BoxFit.cover,
+              );
+            },
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -54,14 +57,14 @@ class HomePage extends StatelessWidget {
                     children: [
                       FrostedContainer(
                         height: 395,
-                        width: 247,
+                        width: 247.5,
                       ),
                       SizedBox(
                         height: 20,
                       ),
                       FrostedContainer(
-                        height: 175,
-                        width: 247,
+                        height: 175.5,
+                        width: 245,
                       ),
                     ],
                   ),
@@ -70,39 +73,65 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(
                     height: size.height - 100,
-                    child: Consumer<CurrentStateProvider>(
+                    child: Selector<CurrentStateProvider, DeviceInfo>(
+                        selector: (context, provider) => provider.currentDevice,
                         builder: (context, _, __) {
-                      return DeviceFrame(
-                        device: currentState.currentDevice,
-                        screen: Container(
-                          color: Colors.red,
-                          child: const Center(
-                            child: Text(
-                              'Hello World',
-                              style: TextStyle(
-                                color: Colors.white,
+                          return DeviceFrame(
+                            device: currentState.currentDevice,
+                            screen: const Center(
+                              child: Text(
+                                'Hello World',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                      );
-                    }),
+                          );
+                        }),
                   ),
                   const SizedBox(
                     width: 8,
                   ),
-                  const Column(
+                  Column(
                     children: [
                       FrostedContainer(
                         height: 395,
-                        width: 247,
+                        width: 247.5,
+                        childG: Center(
+                          child: Wrap(
+                            children: [
+                              ...List.generate(
+                                colorPalette.length,
+                                (index) => Consumer<CurrentStateProvider>(
+                                    builder: (context, _, __) {
+                                  return CustomButton(
+                                    margin: const EdgeInsets.all(10),
+                                    onPressed: () {
+                                      currentState.changeGradient(index);
+                                    },
+                                    pressed: currentState.knobSelected == index
+                                        ? Pressed.pressed
+                                        : Pressed.notPressed,
+                                    animate: true,
+                                    isThreeD: true,
+                                    borderRadius: 100,
+                                    height: 52,
+                                    width: 52,
+                                    shadowColor: Colors.white,
+                                    backgroundColor: colorPalette[index].color,
+                                  );
+                                }),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      FrostedContainer(
-                        height: 175,
-                        width: 247,
+                      const FrostedContainer(
+                        height: 175.5,
+                        width: 247.5,
                       ),
                     ],
                   ),
