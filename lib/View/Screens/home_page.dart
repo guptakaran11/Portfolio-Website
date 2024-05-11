@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 //* Utility
-import 'package:portfolio/View/Utilities/devices.dart';
+import 'package:portfolio/View/Utilities/data_list.dart';
 
 //* Providers
 import '../../Controller/Provider/current_state_provider.dart';

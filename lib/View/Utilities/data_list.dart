@@ -69,7 +69,7 @@ List<ColorModel> colorPalette = [
         Color(0x00203EA6),
       ],
       begin: Alignment.topLeft,
-      end:  Alignment(-0.31, 0.95),
+      end: Alignment(-0.31, 0.95),
     ),
     color: const Color(0xff123cd1),
   ),
