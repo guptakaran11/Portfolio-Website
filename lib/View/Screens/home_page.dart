@@ -3,6 +3,7 @@ import 'package:custom_button_builder/custom_button_builder.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 //* Utility
@@ -73,21 +74,82 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(
                     height: size.height - 100,
-                    child: Selector<CurrentStateProvider, DeviceInfo>(
-                        selector: (context, provider) => provider.currentDevice,
+                    child: Consumer<CurrentStateProvider>(
                         builder: (context, _, __) {
-                          return DeviceFrame(
-                            device: currentState.currentDevice,
-                            screen: const Center(
-                              child: Text(
-                                'Hello World',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
+                      return DeviceFrame(
+                        device: currentState.currentDevice,
+                        screen: Container(
+                          padding: const EdgeInsets.only(
+                            top: 70,
+                            left: 20,
+                            right: 20,
+                          ),
+                          decoration: BoxDecoration(
+                            gradient: colorPalette[currentState.knobSelected]
+                                .gradient,
+                          ),
+                          child: Column(
+                            children: [
+                              Wrap(
+                                crossAxisAlignment: WrapCrossAlignment.center,
+                                alignment: WrapAlignment.start,
+                                children: [
+                                  ...List.generate(
+                                    apps.length,
+                                    (index) => Container(
+                                      margin: const EdgeInsets.only(
+                                        right: 10,
+                                        left: 10,
+                                        top: 10,
+                                        bottom: 20,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          CustomButton(
+                                            margin: const EdgeInsets.only(
+                                              bottom: 5,
+                                            ),
+                                            borderRadius:
+                                                currentState.currentDevice ==
+                                                        Devices.ios.iPhone13
+                                                    ? 8
+                                                    : 100,
+                                            onPressed: () {},
+                                            height: 45,
+                                            width: 45,
+                                            backgroundColor: apps[index].color,
+                                            child: Center(
+                                              child: Icon(
+                                                apps[index].icon,
+                                                size: 25,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 65,
+                                            child: Center(
+                                              child: Text(
+                                                apps[index].title,
+                                                style: GoogleFonts.openSans(
+                                                  fontSize: 11,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                          );
-                        }),
+                            ],
+                          ),
+                        ),
+                      );
+                    }),
                   ),
                   const SizedBox(
                     width: 8,
