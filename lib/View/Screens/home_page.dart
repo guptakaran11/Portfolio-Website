@@ -72,7 +72,6 @@ class HomePage extends StatelessWidget {
                   const SizedBox(
                     width: 8,
                   ),
-                  // RightSide
                   SizedBox(
                     height: size.height - 100,
                     child: Consumer<CurrentStateProvider>(
