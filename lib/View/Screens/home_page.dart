@@ -60,18 +60,14 @@ class HomePage extends StatelessWidget {
                         height: 395,
                         width: 247.5,
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
+                      SizedBox(height: 20),
                       FrostedContainer(
                         height: 175.5,
                         width: 245,
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    width: 8,
-                  ),
+                  const SizedBox(width: 8),
                   SizedBox(
                     height: size.height - 100,
                     child: Consumer<CurrentStateProvider>(
