@@ -104,17 +104,17 @@ List<ColorModel> colorPalette = [
 
 List<AppModel> apps = [
   AppModel(
-      title: "About",
-      color: Colors.white,
-      icon: Icons.person,
-      // screen: const AboutMe(),
-      ),
+    title: "About",
+    color: Colors.white,
+    icon: Icons.person,
+    // screen: const AboutMe(),
+  ),
   AppModel(
-      title: "Skills",
-      color: Colors.white,
-      icon: Icons.ac_unit_rounded,
-      // screen: const Skills(),
-      ),
+    title: "Skills",
+    color: Colors.white,
+    icon: Icons.ac_unit_rounded,
+    // screen: const Skills(),
+  ),
   AppModel(
     title: "Youtube",
     assetPath: "assets/icons/youtube.svg",
@@ -140,11 +140,11 @@ List<AppModel> apps = [
     link: hashnode,
   ),
   AppModel(
-      title: "Experience",
-      color: Colors.white,
-      icon: FontAwesomeIcons.idBadge,
-      // screen: const Experience(),
-      ),
+    title: "Experience",
+    color: Colors.white,
+    icon: FontAwesomeIcons.idBadge,
+    // screen: const Experience(),
+  ),
   AppModel(
     title: "Education",
     color: Colors.white,

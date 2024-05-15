@@ -110,7 +110,13 @@ class HomePage extends StatelessWidget {
                                                         Devices.ios.iPhone13
                                                     ? 8
                                                     : 100,
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              if (apps[index].link != null) {
+                                                // Launch the function
+                                                currentState.launchInBrowser(
+                                                    apps[index].link!);
+                                              }
+                                            },
                                             height: 45,
                                             width: 45,
                                             backgroundColor: apps[index].color,
