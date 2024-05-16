@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 //* Screens
-import './View/Screens/home_page.dart';
+import 'View/Screens/main_screens/home_page.dart';
 
 //* Providers
 import './Controller/Provider/current_state_provider.dart';

@@ -8,6 +8,9 @@ import '../../Model/device_models.dart';
 import '../../Model/colors_model.dart';
 import '../../Model/app_model.dart';
 
+//* Screens
+import '../Screens/apps_screens/about.dart';
+
 const double baseHeight = 790;
 const double baseWidth = 1440;
 
@@ -107,7 +110,7 @@ List<AppModel> apps = [
     title: "About",
     color: Colors.white,
     icon: Icons.person,
-    // screen: const AboutMe(),
+    screen: const AboutMe(),
   ),
   AppModel(
     title: "Skills",
@@ -175,6 +178,6 @@ const String resumeLink =
     "https://drive.google.com/file/d/1hidUO-Gszm7v5qNBEIDoEed6sIPgo2Gb/view";
 const String email = "developer.karangupta@gmail.com";
 String introduction =
-    "Welcome to my portfolio website, this website is highly inspired(almost copied) from Pawan Kumar.\n\nI am a Developer with 1 years of experience in flutter. Worked in many projects most recently worked on aiChat an application that helps prepare students for exams and get solution form the ai and other exams.\n\nWhen i am not developing I am mainly watching some movies or series or just watching fireship";
+    "Welcome to my portfolio website, this website is highly inspired from Pawan Kumar.\n\nI am a Developer with 1 years of experience in flutter. Worked in many projects most recently worked on aiChat an application that helps prepare students for exams and get solution form the ai and other exams.\n\nWhen I'm not developing spending  time watching some movies or series or just watching some standUp comedy and also spend time in spirituality.";
 const String playApps =
     "https://play.google.com/store/apps/developer?id=AppyMonk";
