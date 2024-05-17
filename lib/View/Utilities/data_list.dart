@@ -178,6 +178,6 @@ const String resumeLink =
     "https://drive.google.com/file/d/1hidUO-Gszm7v5qNBEIDoEed6sIPgo2Gb/view";
 const String email = "developer.karangupta@gmail.com";
 String introduction =
-    "Welcome to my portfolio website, this website is highly inspired from Pawan Kumar.\n\nI am a Developer with 1 years of experience in flutter. Worked in many projects most recently worked on aiChat an application that helps prepare students for exams and get solution form the ai and other exams.\n\nWhen I'm not developing spending  time watching some movies or series or just watching some standUp comedy and also spend time in spirituality.";
+    "Welcome to my portfolio website, this website is highly inspired from Pawan Kumar.\n\nI am a Developer with 1 years of experience in flutter. Worked in many projects most recently worked on aiChat an application that helps prepare students for exams and get solution form the ai and other exams.\n\nWhen I'm not developing spending  time watching some movies or series or just watching some standUp comedy and also spend time in spirituality visiting temples and Holy Placesand reads Holy books.";
 const String playApps =
     "https://play.google.com/store/apps/developer?id=AppyMonk";
