@@ -13,6 +13,7 @@ import '../../../Controller/Provider/current_state_provider.dart';
 
 //* Widgets
 import '../../Widgets/frosted_container.dart';
+import '../../Widgets/rain_cloud.dart';
 
 //* Screens
 import '../main_screens/phone_screen_wrapper.dart';
@@ -176,6 +177,10 @@ class HomePage extends StatelessWidget {
                 ],
               )
             ],
+          ),
+          const Rain(
+            // top: 300,
+            // oposite: false,
           ),
         ],
       ),
