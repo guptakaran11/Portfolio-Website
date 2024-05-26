@@ -5,13 +5,13 @@ import 'package:rive/rive.dart';
 import 'package:flutter/services.dart';
 
 class Rain extends StatefulWidget {
-  // final double top;
-  // final bool oposite;
+  final double top;
+  final bool oposite;
 
   const Rain({
     super.key,
-    // required this.top,
-    // required this.oposite,
+    required this.top,
+    required this.oposite,
   });
 
   @override
@@ -61,12 +61,13 @@ class _RainState extends State<Rain> {
     return rainArtBoard != null
         ? TweenAnimationBuilder(
             tween: Tween(
-              begin: 0,
-              end: size.width - 180,
+              begin: widget.oposite ? size.width - 180 : 0,
+              end: widget.oposite ? 0 : size.width - 180,
             ),
-            duration: const Duration(seconds: 3),
+            duration: const Duration(seconds: 600),
             builder: (context, value, _) {
               return Positioned(
+                top: widget.top,
                 left: value.toDouble(),
                 child: SizedBox(
                   width: 200,

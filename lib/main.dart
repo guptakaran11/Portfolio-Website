@@ -7,6 +7,7 @@ import 'View/Screens/main_screens/home_page.dart';
 
 //* Providers
 import './Controller/Provider/current_state_provider.dart';
+import './Controller/Provider/theme_provider.dart';
 
 void main() {
   runApp(const Portfolio());
@@ -22,6 +23,9 @@ class Portfolio extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) => CurrentStateProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ThemeProvider(),
         ),
       ],
       child: MaterialApp(
