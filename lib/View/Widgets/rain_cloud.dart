@@ -1,6 +1,8 @@
-//* Packages
+//* Dart Packages
+import 'dart:developer';
+
+// Packages
 import 'package:flutter/material.dart';
-// import 'package:flutter_animate/flutter_animate.dart';
 import 'package:rive/rive.dart';
 import 'package:flutter/services.dart';
 
@@ -34,25 +36,32 @@ class _RainState extends State<Rain> {
   @override
   void initState() {
     super.initState();
+    loadRiveFile();
+  }
 
-    rootBundle.load('assets/rive/rain.riv').then((value) {
-      final file = RiveFile.import(value);
+  Future<void> loadRiveFile() async {
+    try {
+      final data = await rootBundle.load('assets/rive/cloud_icon.riv');
+      final file = RiveFile.import(data);
       final artBoard = file.mainArtboard;
       var controller =
           StateMachineController.fromArtboard(artBoard, 'State Machine 1');
 
       if (controller != null) {
-        // do something here matey
         artBoard.addController(controller);
-        rain = controller.findInput('isPressed');
-        hover = controller.findInput('isHover');
+        rain = controller.findInput<bool>('isPressed');
+        hover = controller.findInput<bool>('isHover');
         rain?.value = false;
         hover?.value = false;
+        setState(() {
+          rainArtBoard = artBoard;
+        });
+      } else {
+        log('Error: Controller is null');
       }
-      setState(() {
-        rainArtBoard = file.mainArtboard;
-      });
-    });
+    } catch (e) {
+      log('Error loading Rive file: $e');
+    }
   }
 
   @override
@@ -60,27 +69,27 @@ class _RainState extends State<Rain> {
     Size size = MediaQuery.of(context).size;
     return rainArtBoard != null
         ? TweenAnimationBuilder(
-            tween: Tween(
+            tween: Tween<double>(
               begin: widget.oposite ? size.width - 180 : 0,
               end: widget.oposite ? 0 : size.width - 180,
             ),
             duration: const Duration(seconds: 600),
-            builder: (context, value, _) {
+            builder: (context, value, child) {
               return Positioned(
                 top: widget.top,
-                left: value.toDouble(),
+                left: value,
                 child: SizedBox(
                   width: 200,
                   height: 100,
                   child: MouseRegion(
                     onEnter: (_) {
-                      hover?.value == true;
+                      if (hover != null) hover!.value = true;
                     },
                     onExit: (_) {
-                      hover?.value == false;
+                      if (hover != null) hover!.value = false;
                     },
                     child: GestureDetector(
-                      onTap: () => playRain(),
+                      onTap: playRain,
                       child: Rive(
                         artboard: rainArtBoard!,
                         useArtboardSize: true,

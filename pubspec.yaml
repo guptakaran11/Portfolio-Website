@@ -39,7 +39,7 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   google_fonts: ^6.2.1
   provider: ^6.1.2
-  rive: ^0.13.3
+  rive: ^0.13.5
   url_launcher: ^6.2.6
 
 dev_dependencies:
@@ -60,6 +60,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/rive/
+    - assets/rive/cloud_icon.riv
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
