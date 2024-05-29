@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../Utilities/data_list.dart';
 
 //* Models
-import '../../../../Model/experience_model.dart';
+import '../../../../Model/projects_model.dart';
 
 class Experience extends StatelessWidget {
   const Experience({super.key});
@@ -28,28 +28,28 @@ class Experience extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          ...List.generate(jobExperiences.length, (index) {
-            JobExperience experience = jobExperiences[index];
+          ...List.generate(projects.length, (index) {
+            Projects project = projects[index];
             return ExpansionTile(
               tilePadding: const EdgeInsets.all(20),
               childrenPadding: const EdgeInsets.all(10),
               leading: Container(
                 width: 2,
                 height: 100,
-                color: experience.color,
+                color: project.color,
               ),
               title: Text(
-                experience.title,
+                project.title,
                 style: GoogleFonts.inter(fontWeight: FontWeight.bold),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 5),
                 child: Text(
-                  '${experience.company}\n${experience.startDate} - ${experience.endDate} | ${experience.location}',
+                  '${project.startDate} - ${project.endDate} | ${project.githublink}',
                   style: GoogleFonts.inter(fontSize: 13, color: Colors.grey),
                 ),
               ),
-              children: experience.bulletPoints.map((bulletPoint) {
+              children: project.bulletPoints.map((bulletPoint) {
                 return ListTile(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 15.0),
                   // leading: const Icon(Icons.arrow_right),
@@ -62,6 +62,7 @@ class Experience extends StatelessWidget {
                   //       borderRadius: BorderRadius.circular(100),
                   //       color: Colors.black),
                   // ),
+
                   title: Row(
                     children: [
                       const SizedBox(

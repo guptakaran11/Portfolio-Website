@@ -9,11 +9,12 @@ import '../../Model/colors_model.dart';
 import '../../Model/app_model.dart';
 import '../../Model/experience_model.dart';
 import '../../Model/skills_model.dart';
+import '../../Model/projects_model.dart';
 
 //* Screens
 import '../Screens/apps_screens/About/about.dart';
 import '../Screens/apps_screens/Education/education.dart';
-import '../Screens/apps_screens/Experience/experience.dart';
+import '../Screens/apps_screens/Projects/projects.dart';
 import '../Screens/apps_screens/Skills/skills.dart';
 
 const double baseHeight = 790;
@@ -148,7 +149,7 @@ List<AppModel> apps = [
     link: hashnode,
   ),
   AppModel(
-    title: "Experience",
+    title: "Projects",
     color: Colors.white,
     icon: FontAwesomeIcons.idBadge,
     screen: const Experience(),
@@ -186,40 +187,94 @@ String introduction =
     "Welcome to my portfolio website, this website is highly inspired from Pawan Kumar.\n\nI am a Developer with 1 years of experience in flutter. Worked in many projects most recently worked on aiChat an application that helps prepare students for exams and get solution form the ai and other exams.\n\nWhen I'm not developing spending  time watching some movies or series or just watching some standUp comedy and also spend time in spirituality visiting temples and Holy Placesand reads Holy books.";
 const String playApps =
     "https://play.google.com/store/apps/developer?id=AppyMonk";
+const String talkBuddyProject = 'https://github.com/guptakaran11/Talk-Buddy';
+const String sanchalanProject = 'https://github.com/guptakaran11/Sanchalan';
+const String cryptoPulseProject = 'https://github.com/guptakaran11/CryptoPulse';
+const String aiChatProject = 'https://github.com/guptakaran11/AI-Chat';
+const String moviesBuffProject = 'https://github.com/guptakaran11/Movie-Buff';
 
 final List<JobExperience> education = [
   JobExperience(
     color: Colors.red,
-    location: "Patiala, India",
-    title: 'Computer Engineering',
-    company: 'Thapar Institure of Engineering',
-    startDate: 'June 2021',
+    location: "Faridabad, India",
+    title: 'Computer Engineering with AIML',
+    company: 'Aravali College of Engineering and Management',
+    startDate: 'Oct 2020',
     endDate: 'Present',
     bulletPoints: [
       "Currently in the final year of my college!",
     ],
   ),
+  // JobExperience(
+  //   color: Colors.blue,
+  //   location: "Faridabad, India",
+  //   title: 'Diploma in Computer Science',
+  //   company: 'Thapar Polytechnic College',
+  //   startDate: 'June 2020',
+  //   endDate: 'June 2021',
+  //   bulletPoints: [
+  //     'Some of the best years of college life',
+  //   ],
+  // ),
   JobExperience(
     color: Colors.blue,
-    location: "Patiala, India",
-    title: 'Diploma in Computer Science',
-    company: 'Thapar Polytechnic College',
-    startDate: 'June 2018',
-    endDate: 'June 2021',
+    location: "Faridabad, India",
+    title: 'Class 12th(NON - Medical)',
+    company: 'Swami Dharmanand Senior Secondary School, Ballabhgarh',
+    startDate: 'Mar 2019',
+    endDate: 'June 2020',
     bulletPoints: [
-      'Some of the best years of college life',
+      'Scored 95% in CBSE Board'
+          'Some of the best years of School life',
+    ],
+  ),
+  JobExperience(
+    color: Colors.greenAccent,
+    location: "Faridabad, India",
+    title: 'Class 10th',
+    company: 'Swami Dharmanand Senior Secondary School, Ballabhgarh',
+    startDate: 'Mar 2017',
+    endDate: 'May 2018',
+    bulletPoints: [
+      'Scored 88% in Board Exams'
+          'Some of the best years of School life',
     ],
   ),
 ];
 
-final List<JobExperience> jobExperiences = [
-  JobExperience(
+final List<Projects> projects = [
+  Projects(
     color: Colors.blue,
-    location: "Banglore, India",
-    title: 'Full Stack Developer',
-    company: 'Stimuler',
-    startDate: 'Feb 2023',
-    endDate: 'Present',
+    title: "Sanchalan",
+    startDate: 'Dec 2023',
+    endDate: 'Feb 2024',
+    bulletPoints: [],
+    skills: [],
+    githublink: sanchalanProject,
+  ),
+  Projects(
+    color: Colors.redAccent,
+    title: "Talk Buddy",
+    startDate: 'Mar 2024',
+    endDate: 'Apr 2024',
+    bulletPoints: [],
+    skills: [],
+    githublink: talkBuddyProject,
+  ),
+  Projects(
+    color: Colors.orangeAccent,
+    title: "CryptoPulse",
+    startDate: 'Mar 2024',
+    endDate: 'Mar 2024',
+    bulletPoints: [],
+    skills: [],
+    githublink: cryptoPulseProject,
+  ),
+  Projects(
+    color: Colors.greenAccent,
+    title: "Ai - Chat",
+    startDate: 'Apr 2024',
+    endDate: 'May 2024',
     bulletPoints: [
       "Actively develop and manage push notifications to engage users effectively.",
       "Successfully set up in-app purchase functionality for both iOS and Android platforms.",
@@ -227,63 +282,98 @@ final List<JobExperience> jobExperiences = [
       "Employ Amplitude and Firebase Analytics to track and analyze user behavior, informing data-driven decisions.",
       "The Startup has over 3,00,000 lakh active users",
     ],
-  ),
-  // Add more job experiences here...
-  JobExperience(
-    color: Colors.redAccent,
-    location: "Remote",
-    title: 'Flutter Developer',
-    company: 'Perpetuum India',
-    startDate: 'Oct 2022',
-    endDate: 'Jan 2023',
-    bulletPoints: [
-      "Establish voice calling functionality using Agora SDK to enable real-time communication within the app.",
-      "Implement intricate animations using Rive, enhancing the app's visual appeal and engagement.",
-      "Collaborate directly with Stanza Living's CTO, gaining insights into industry best practices and cutting-edge technologies.",
-      "Acquire proficiency in server-driven UI setup, optimizing app flexibility and scalability through dynamic configuration.",
+    skills: [
+      'Genertaive Ai-tools',
+      'Hive',
+      'Gemini',
+      'Flutter',
+      'Artificial Intelligence',
     ],
+    githublink: aiChatProject,
   ),
-  JobExperience(
-    color: Colors.orangeAccent,
-    location: "Remote",
-    title: 'App Architecture Intern',
-    company: 'Habeato',
-    startDate: 'Oct 2021',
-    endDate: 'Nov 2021',
-    bulletPoints: [
-      "Collaborated with founders to develop a HealthifyMe clone, demonstrating strong teamwork and app development skills.",
-      "Engineered complex animations to enhance user experience and app visual appeal.",
-      "Played an active role in system design processes, contributing to efficient and scalable app architecture.",
-    ],
-  ),
-  JobExperience(
-    color: Colors.greenAccent,
-    location: "Remote",
-    title: 'App Developer',
-    company: 'Kylo Apps',
-    startDate: 'Sep 2021',
-    endDate: 'Oct 2021',
-    bulletPoints: [
-      "Collaborated as a team member in developing a cryptocurrency wallet, akin to Trust Wallet, showcasing strong teamwork and blockchain app development expertise.",
-      "Proficiently integrated REST APIs into the application, enhancing its functionality and connectivity with external services."
-    ],
-  ),
-  JobExperience(
+  Projects(
     color: Colors.black,
-    location: "Remote",
-    title: 'Flutter App Intern',
-    company: 'Cogent Web Services',
-    startDate: 'Dec 2020',
-    endDate: 'June 2021',
-    bulletPoints: [
-      "Independently developed a Life Simulator game using Flutter from scratch, applying state-of-the-art state management practices to ensure a top-tier user experience.",
-      "Leveraged Flutter's robust features to craft an immersive and captivating gameplay experience, demonstrating proficiency in app development.",
-      "Successfully implemented Google Ads, in-app purchases, and Hive database for efficient user data storage and monetization strategies.",
-      "Generated creative ideas for client pitches, fostering creativity and ensuring the game's entertainment value and thought-provoking nature.",
-      "Published the game on the Play Store, achieving over 5,000 downloads, showcasing the ability to deliver a popular and engaging mobile application.",
-    ],
+    title: "Movies Buff",
+    startDate: 'Feb 2024',
+    endDate: 'Mar 2024',
+    bulletPoints: [],
+    skills: [],
+    githublink: moviesBuffProject,
   ),
 ];
+
+// final List<JobExperience> projects = [
+//   JobExperience(
+//     color: Colors.blue,
+//     location: "Banglore, India",
+//     title: 'Full Stack Developer',
+//     company: 'Stimuler',
+//     startDate: 'Feb 2023',
+//     endDate: 'Present',
+//     bulletPoints: [
+//       "Actively develop and manage push notifications to engage users effectively.",
+//       "Successfully set up in-app purchase functionality for both iOS and Android platforms.",
+//       "Utilize the Provider package for streamlined state management and implement real-time data streams.",
+//       "Employ Amplitude and Firebase Analytics to track and analyze user behavior, informing data-driven decisions.",
+//       "The Startup has over 3,00,000 lakh active users",
+//     ],
+//   ),
+//   // Add more projects here...
+//   JobExperience(
+//     color: Colors.redAccent,
+//     location: "Remote",
+//     title: 'Flutter Developer',
+//     company: 'Perpetuum India',
+//     startDate: 'Oct 2022',
+//     endDate: 'Jan 2023',
+//     bulletPoints: [
+//       "Establish voice calling functionality using Agora SDK to enable real-time communication within the app.",
+//       "Implement intricate animations using Rive, enhancing the app's visual appeal and engagement.",
+//       "Collaborate directly with Stanza Living's CTO, gaining insights into industry best practices and cutting-edge technologies.",
+//       "Acquire proficiency in server-driven UI setup, optimizing app flexibility and scalability through dynamic configuration.",
+//     ],
+//   ),
+//   JobExperience(
+//     color: Colors.orangeAccent,
+//     location: "Remote",
+//     title: 'App Architecture Intern',
+//     company: 'Habeato',
+//     startDate: 'Oct 2021',
+//     endDate: 'Nov 2021',
+//     bulletPoints: [
+//       "Collaborated with founders to develop a HealthifyMe clone, demonstrating strong teamwork and app development skills.",
+//       "Engineered complex animations to enhance user experience and app visual appeal.",
+//       "Played an active role in system design processes, contributing to efficient and scalable app architecture.",
+//     ],
+//   ),
+//   JobExperience(
+//     color: Colors.greenAccent,
+//     location: "Remote",
+//     title: 'App Developer',
+//     company: 'Kylo Apps',
+//     startDate: 'Sep 2021',
+//     endDate: 'Oct 2021',
+//     bulletPoints: [
+//       "Collaborated as a team member in developing a cryptocurrency wallet, akin to Trust Wallet, showcasing strong teamwork and blockchain app development expertise.",
+//       "Proficiently integrated REST APIs into the application, enhancing its functionality and connectivity with external services."
+//     ],
+//   ),
+//   JobExperience(
+//     color: Colors.black,
+//     location: "Remote",
+//     title: 'Flutter App Intern',
+//     company: 'Cogent Web Services',
+//     startDate: 'Dec 2020',
+//     endDate: 'June 2021',
+//     bulletPoints: [
+//       "Independently developed a Life Simulator game using Flutter from scratch, applying state-of-the-art state management practices to ensure a top-tier user experience.",
+//       "Leveraged Flutter's robust features to craft an immersive and captivating gameplay experience, demonstrating proficiency in app development.",
+//       "Successfully implemented Google Ads, in-app purchases, and Hive database for efficient user data storage and monetization strategies.",
+//       "Generated creative ideas for client pitches, fostering creativity and ensuring the game's entertainment value and thought-provoking nature.",
+//       "Published the game on the Play Store, achieving over 5,000 downloads, showcasing the ability to deliver a popular and engaging mobile application.",
+//     ],
+//   ),
+// ];
 
 List<SkillsModel> skills = [
   SkillsModel(skillName: "Flutter", colorS: Colors.blue, iconPath: "random"),
