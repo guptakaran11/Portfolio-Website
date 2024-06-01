@@ -347,7 +347,7 @@ class HomePage extends StatelessWidget {
                                         ),
                                         Flexible(
                                             child: AutoSizeText(
-                                          "Let's connect!",
+                                          "Let's connect !",
                                           style: GoogleFonts.exo(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w700,
