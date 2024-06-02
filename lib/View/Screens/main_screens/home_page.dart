@@ -361,7 +361,7 @@ class HomePage extends StatelessWidget {
                                         )),
                                       ],
                                     ).animate().fadeIn(
-                                        delay: 1.seconds, duration: .7.seconds),
+                                        delay: 1.seconds, duration: .7.seconds,),
                                   ),
                                 ),
                                 height: 175.5 * theme.heightRatio,
@@ -371,7 +371,7 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
 
-                  // main mobile screen
+                  //  mobile screen
                   SizedBox(
                     height: size.height - 100,
                     child: Consumer<CurrentStateProvider>(
