@@ -371,7 +371,7 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
 
-                  //  mobile screen
+                  // main mobile screen
                   SizedBox(
                     height: size.height - 100,
                     child: Consumer<CurrentStateProvider>(
